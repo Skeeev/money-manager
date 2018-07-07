@@ -2,9 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const paths = {
-  src: './src',
-  indexJS: path.resolve('./src', 'index.js'),
-  indexHTML: path.resolve('./src', 'index.html'),
+  src: path.resolve('src'),
+  app: path.resolve('src/app'),
+  indexJS: path.resolve('src/index.js'),
+  indexHTML: path.resolve('src/index.html'),
+  assets: path.resolve('src/assets'),
   dist: path.resolve(__dirname, 'dist')
 };
 
@@ -14,6 +16,12 @@ const config = {
   output: {
     path: paths.dist,
     filename: 'bundle.js'
+  },
+  resolve: {
+    modules: [ 'node_modules', paths.src, paths.app ],
+    alias: {
+      assets: paths.assets
+    }
   },
   module: {
     rules: [
@@ -28,13 +36,24 @@ const config = {
         }
       },
       {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader?name=images/[name].[ext]'
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: 'file-loader?name=fonts/[name].[ext]'
+      },
+      {
         test: /\.css$/,
         use: [
           {
             loader: "style-loader"
           },
           {
-            loader: "css-loader"
+            loader: "css-loader",
+            options: {
+              modules: true
+            }
           }
         ]
       }
