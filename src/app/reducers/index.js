@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
+import transactions from './transactions';
 
-const rootReducer = (state = {}, action) => {
-  return {};
-};
-
-export default rootReducer;
+export default combineReducers({
+  transactions
+});

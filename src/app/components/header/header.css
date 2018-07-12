@@ -2,6 +2,7 @@
   display: flex;
   padding: 5px 20px;
   border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 4px 8px 0 rgba(48, 82, 120, .03)
 }
 
 .header__logo-link {
@@ -25,5 +26,7 @@
 }
 
 .header__nav-link {
-  padding: 19px 35px;
+  padding: 21px 35px;
+  color: #65777b;
+  font-weight: 600;
 }
