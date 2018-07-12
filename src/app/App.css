@@ -23,3 +23,16 @@
   font-weight: normal;
   font-style: normal;
 }
+
+body {
+  font-family: OpenSans, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}

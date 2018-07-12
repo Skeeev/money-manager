@@ -4,11 +4,24 @@ import logo from 'assets/images/logo.png';
 import './header.css';
 
 const Header = () => (
-  <header>
-    <a href="#">
-      <img src={logo} alt="logo"/>
+  <header className="header">
+    <a className="header__logo-link" href="/">
+      <img className="header__logo" src={logo} alt="Logo"/>
     </a>
-    <div style={{font: '400 2em OpenSans, sans-serif'}}>test font</div>
+    <nav className="header__nav">
+      <ul className="header__nav-list">
+        <li>
+          <a className="header__nav-link" href="">
+            Transactions
+          </a>
+        </li>
+        <li>
+          <a className="header__nav-link" href="">
+            Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
   </header>
 );
 
