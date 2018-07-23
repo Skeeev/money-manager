@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
-import reducer from './app/reducers';
-import App from './app';
 
 import 'normalize.css';
+import reducer from './app/reducers';
+import App from './app';
 
 const store = createStore(
   reducer,
@@ -16,7 +16,7 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={ store }>
     <App />
   </Provider>,
   document.getElementById('root')

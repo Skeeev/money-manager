@@ -1,5 +1,5 @@
 import transaction from './transaction';
-import { transactionActionTypes as actionTypes } from '../constants';
+import { transactionActionTypes as actionTypes } from '../../constants';
 
 const transactions = (state = [], action) => {
   switch (action.type) {

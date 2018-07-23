@@ -1,22 +1,25 @@
 import React from 'react';
+import injectSheet from 'react-jss';
 
-import logo from 'assets/images/logo.png';
-import './header.css';
+import logo from 'assets/images/logo.svg';
+import styles from './styles';
 
-const Header = () => (
-  <header className="header">
-    <a className="header__logo-link" href="/">
-      <img className="header__logo" src={logo} alt="Logo"/>
+const Header = ({
+  classes
+}) => (
+  <header className={ classes.header }>
+    <a className={ classes.headerLogoLink } href="/">
+      <img className={ classes.headerLogo } src={ logo } alt="Logo"/>
     </a>
-    <nav className="header__nav">
-      <ul className="header__nav-list">
+    <nav className={ classes.headerNav }>
+      <ul className={ classes.headerNavList }>
         <li>
-          <a className="header__nav-link" href="">
+          <a className={ `${classes.headerNavLink} ${classes.headerNavLinkActive}` } href="">
             Transactions
           </a>
         </li>
         <li>
-          <a className="header__nav-link" href="">
+          <a className={ classes.headerNavLink } href="">
             Settings
           </a>
         </li>
@@ -25,4 +28,4 @@ const Header = () => (
   </header>
 );
 
-export default Header;
+export default injectSheet(styles)(Header);

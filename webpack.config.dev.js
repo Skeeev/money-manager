@@ -36,12 +36,26 @@ const config = {
         }
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader?name=images/[name].[ext]'
+        test: /\.(png|jpg|svg|gif)$/i,
+        exclude: path.resolve(paths.assets, 'fonts'),
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'images/'
+          }
+        }
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: 'file-loader?name=fonts/[name].[ext]'
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+        exclude: path.resolve(paths.assets, 'images'),
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }
       },
       {
         test: /\.css$/,
