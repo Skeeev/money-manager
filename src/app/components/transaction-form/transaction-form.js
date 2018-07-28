@@ -9,12 +9,12 @@ import 'moment/locale/it';
 import 'react-day-picker/lib/style.css';
 
 import Button from '../button';
-import datePickerWithStyles from '../date-picker';
+import { withStyledDatePicker } from '../hoc';
 
 import styles from './styles';
 import transactionSelectStyles from './transactionSelectStyles';
 
-const DatePicker = datePickerWithStyles(DayPickerInput);
+const DatePicker = withStyledDatePicker(DayPickerInput);
 
 const TransactionForm = ({
   classes,
@@ -119,9 +119,10 @@ const TransactionForm = ({
     <Button
       type="button"
       className={ classes.transactionFormSubmitButton }
-      text="Add"
       onClick={ submitTransactionFormHandler }
-    />
+    >
+      Add
+    </Button>
   </form>
 );
 

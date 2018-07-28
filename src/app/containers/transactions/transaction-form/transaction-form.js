@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, formValueSelector } from 'redux-form';
 
-import TransactionForm from '../../../components/transaction-form';
-import { transactionsActionCreators as actionCreators } from '../../../action-creators';
+import TransactionForm from 'components/transaction-form';
+import { transactionsActionCreators as actionCreators } from 'action-creators';
 
 const FORM_NAME = 'transactionForm';
 
@@ -23,7 +23,7 @@ const mapStateToProps = (state) => {
       category: '',
       date: new Date(),
       description: '',
-      amount: 0
+      amount: ''
     },
     categorySelectOptions: categories
   };

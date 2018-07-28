@@ -7,17 +7,17 @@ const Button = ({
   classes,
   type,
   className,
-  disabled = false,
-  text,
+  disabled,
+  children,
   ...props
 }) => (
   <button
     type={ type }
-    className={ `${classes.button} ${className}` }
+    className={ `${classes.button} ${className || ''}` }
     disabled={ disabled }
     { ...props }
   >
-    { text }
+    { children }
   </button>
 );
 

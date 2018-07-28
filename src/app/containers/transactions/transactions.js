@@ -1,14 +1,20 @@
 import React from 'react';
+import injectSheet from 'react-jss';
 
 import AddTransaction from './add-transaction';
+import TransactionsList from 'components/transactions-list';
 
-const Transactions = () => (
-  <div>
+import styles from './styles';
+
+const Transactions = ({
+  classes
+}) => (
+  <div className={ classes.wrapper }>
     <AddTransaction />
     {/*<FilterTransactions />*/}
     {/*<TransactionsInfo />*/}
-    {/*<VisibleTransactions />*/}
+    <TransactionsList />
   </div>
 );
 
-export default Transactions;
+export default injectSheet(styles)(Transactions);

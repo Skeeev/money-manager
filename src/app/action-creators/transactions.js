@@ -1,5 +1,5 @@
-import { transactionActionTypes as actionTypes } from '../constants';
-import { generateTransactionId } from '../helpers';
+import { transactionActionTypes as actionTypes } from 'constants';
+import { generateTransactionId } from 'utils';
 
 const toggleAddTransactionModal = () => ({
   type: actionTypes.TOGGLE_ADD_TRANSACTION_MODAL

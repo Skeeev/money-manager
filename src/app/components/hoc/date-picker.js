@@ -5,7 +5,7 @@ function getDisplayName(WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component';
 }
 
-export default function datePickerWithStyles(DatePicker) {
+export default function withStyledDatePicker(DatePicker) {
   class StyledDatePicker extends Component {
     render() {
       const datePickerDefaultClassNames = DayPicker.defaultProps.classNames;

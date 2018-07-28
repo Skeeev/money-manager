@@ -40,13 +40,13 @@ export default {
     right: "10px",
     cursor: "pointer",
     transition: "transform .3s",
-    '&:hover, &:active, &:focus': {
+    "&:hover, &:active, &:focus": {
       transform: "scale(1.2)"
     },
-    '&:hover:before, &:active:before, &:focus:before': {
+    "&:hover:before, &:active:before, &:focus:before": {
       color: "#e67d86"
     },
-    '&:before': {
+    "&:before": {
       color: "#424242",
       fontSize: "1.2em",
       transition: "color .3s",

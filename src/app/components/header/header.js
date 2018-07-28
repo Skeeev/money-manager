@@ -13,12 +13,12 @@ const Header = ({
     </a>
     <nav className={ classes.headerNav }>
       <ul className={ classes.headerNavList }>
-        <li>
+        <li className={ classes.headerNavListItem }>
           <a className={ `${classes.headerNavLink} ${classes.headerNavLinkActive}` } href="">
             Transactions
           </a>
         </li>
-        <li>
+        <li className={ classes.headerNavListItem }>
           <a className={ classes.headerNavLink } href="">
             Settings
           </a>

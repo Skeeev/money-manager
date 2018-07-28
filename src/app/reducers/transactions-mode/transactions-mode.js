@@ -1,5 +1,5 @@
 import transactions from './transactions';
-import { transactionActionTypes as actionTypes } from '../../constants';
+import { transactionActionTypes as actionTypes } from 'constants';
 
 const initialState = {
   isAddingTransaction: false,

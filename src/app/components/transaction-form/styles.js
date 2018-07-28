@@ -13,7 +13,7 @@ export default {
     font: "700 1.2em OpenSans, sans-serif",
     cursor: "pointer",
     transition: "color .3s",
-    '&:hover, &:active, &:focus': {
+    "&:hover, &:active, &:focus": {
       color: "#e67d86"
     }
   },
@@ -28,8 +28,9 @@ export default {
     fontSize: "1.5em",
     transition: "border-color .3s, color .3s, background-color .3s",
     cursor: "pointer",
-    '&:hover, &:active, &:focus': {
+    "&:hover, &:active, &:focus": {
       borderColor: "transparent",
+      outline: "0",
       color: "#fff",
       backgroundColor: "#e67d86"
     }
@@ -40,7 +41,7 @@ export default {
     padding: "14px 8px",
     borderRadius: "4px",
     boxSizing: "border-box",
-    '&:focus': {
+    "&:focus": {
       outlineColor: "#e67d86"
     }
   },
@@ -53,25 +54,25 @@ export default {
     resize: "none"
   },
   transactionFormDatePickerWrapper: {
-    position: 'relative'
+    position: "relative"
   },
   transactionFormDatePickerOverlay: {
-    position: 'absolute',
-    top: '8px',
-    left: '0',
-    zIndex: '1',
-    backgroundColor: '#fff',
-    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.15)'
+    position: "absolute",
+    top: "8px",
+    left: "0",
+    zIndex: "1",
+    backgroundColor: "#fff",
+    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.15)"
   },
   transactionDatePickerDay: {
-    transition: 'color .3s, background-color .3s',
-    '&:hover': {
-      color: '#fff',
-      backgroundColor: '#e67d8666 !important'
+    transition: "color .3s, background-color .3s",
+    "&:hover": {
+      color: "#fff",
+      backgroundColor: "#e67d8666 !important"
     }
   },
   transactionDatePickerSelectedDay: {
-    color: '#fff',
-    backgroundColor: '#e67d86'
+    color: "#fff",
+    backgroundColor: "#e67d86"
   }
 };

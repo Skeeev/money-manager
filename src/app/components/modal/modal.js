@@ -47,8 +47,9 @@ const Modal = ({
               type="button"
               className={ classes.modalSubmitButton }
               onClick={ onSubmit }
-              text={ submitButtonText }
-            /> :
+            >
+              { submitButtonText }
+            </Button> :
             null
         }
       </div>

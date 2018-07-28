@@ -7,6 +7,11 @@ const paths = {
   indexJS: path.resolve('src/index.js'),
   indexHTML: path.resolve('src/index.html'),
   assets: path.resolve('src/assets'),
+  constants: path.resolve('src/app/constants'),
+  utils: path.resolve('src/app/utils'),
+  actionCreators: path.resolve('src/app/action-creators'),
+  containers: path.resolve('src/app/containers'),
+  components: path.resolve('src/app/components'),
   dist: path.resolve(__dirname, 'dist')
 };
 
@@ -20,7 +25,12 @@ const config = {
   resolve: {
     modules: [ 'node_modules', paths.src, paths.app ],
     alias: {
-      assets: paths.assets
+      assets: paths.assets,
+      constants: paths.constants,
+      utils: paths.utils,
+      containers: paths.containers,
+      components: paths.components,
+      'action-creators': paths.actionCreators
     }
   },
   module: {

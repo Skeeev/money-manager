@@ -1,7 +1,7 @@
 export default {
   header: {
     display: "flex",
-    padding: "5px 20px",
+    padding: "0 20px",
     borderBottom: "1px solid #e5e5e5",
     justifyContent: "space-between",
     alignItems: "center",
@@ -11,7 +11,7 @@ export default {
     flexBasis: "200px",
     fontSize: "0",
     transition: "transform .3s",
-    '&:hover, &:active, &:focus': {
+    "&:hover, &:active, &:focus": {
       transform: "scale(1.05)"
     }
   },
@@ -27,19 +27,22 @@ export default {
     padding: "0",
     listStyle: "none"
   },
+  headerNavListItem: {
+    padding: "20px 0",
+  },
   headerNavLink: {
     position: "relative",
     padding: "21px 35px",
     color: "#424242",
     fontWeight: "600",
     transition: "color .3s",
-    '&:hover, &:active, &:focus': {
+    "&:hover, &:active, &:focus": {
       color: "#e67d86"
     }
   },
   headerNavLinkActive: {
     color: "#e67d86",
-    '&:after': {
+    "&:after": {
       position: "absolute",
       content: "''",
       width: "100%",
