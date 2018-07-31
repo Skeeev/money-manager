@@ -4,6 +4,7 @@ const transaction = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.ADD_TRANSACTION:
       const { category, date, description, amount } = action;
+
       return {
         category,
         date,
@@ -11,6 +12,8 @@ const transaction = (state = {}, action) => {
         amount,
         id: action.id
       };
+    case actionTypes.REMOVE_TRANSACTION:
+      return state.id !== action.id;
     default:
       return state;
   }

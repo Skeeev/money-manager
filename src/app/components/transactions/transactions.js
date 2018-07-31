@@ -1,10 +1,10 @@
 import React from 'react';
 import injectSheet from 'react-jss';
 
-import AddTransaction from './add-transaction';
-import TransactionsList from 'components/transactions-list';
+import AddTransaction from '../add-transaction';
 
 import styles from './styles';
+import TransactionsSection from 'containers/transactions-section';
 
 const Transactions = ({
   classes
@@ -13,7 +13,7 @@ const Transactions = ({
     <AddTransaction />
     {/*<FilterTransactions />*/}
     {/*<TransactionsInfo />*/}
-    <TransactionsList />
+    <TransactionsSection />
   </div>
 );
 

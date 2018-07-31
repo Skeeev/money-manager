@@ -29,12 +29,14 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mergeProps = (stateProps, { dispatch }) => {
+const mergeProps = (stateProps, { dispatch }, ownProps) => {
   const { category, date, description, amount } = stateProps;
+  const { toggleTransactionModal } = ownProps;
 
   return {
     ...stateProps,
     submitTransactionFormHandler: () => {
+      toggleTransactionModal();
       dispatch(
         actionCreators.addTransaction({
           date,

@@ -10,7 +10,7 @@ export default {
     transition: "box-shadow .3s, color .3s, background-color .3s",
     "&:hover, &:active, &:focus": {
       outline: "0",
-      boxShadow: "0px 3px 8px 1px #e67d8669"
+      boxShadow: "0px 4px 9px 1px #e67d8669"
     }
   },
   addTransactionIcon: {

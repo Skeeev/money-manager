@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from 'components/header';
-import MoneyManager from 'containers/money-manager';
+import MoneyManager from 'components/money-manager';
 
 import './App.css';
 

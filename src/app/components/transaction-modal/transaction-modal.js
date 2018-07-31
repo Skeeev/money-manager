@@ -6,11 +6,10 @@ import Button from '../button';
 
 import styles from './styles';
 
-const Modal = ({
+const TransactionModal = ({
   classes,
   isOpen,
   onClose,
-  onSubmit,
   withSubmit,
   submitButtonText,
   title,
@@ -46,7 +45,6 @@ const Modal = ({
             <Button
               type="button"
               className={ classes.modalSubmitButton }
-              onClick={ onSubmit }
             >
               { submitButtonText }
             </Button> :
@@ -59,4 +57,4 @@ const Modal = ({
 
 ReactModal.setAppElement('body');
 
-export default injectSheet(styles)(Modal);
+export default injectSheet(styles)(TransactionModal);
