@@ -6,11 +6,12 @@ import styles from './styles';
 const Transaction = ({
   classes,
   data,
+  onTransactionEditIconClick,
   onTransactionRemoveIconClick
 }) => (
   <li className={ classes.transactionsSectionListItem }>
     <div className={ classes.transactionsSectionItemCategory }>
-      { data.category }
+      { data.category.label }
     </div>
     <time className={ classes.transactionsSectionItemDate }>
       { `${data.date.getDate()} ${data.date.getMonth() + 1}, ${data.date.getFullYear()}`}
@@ -25,7 +26,7 @@ const Transaction = ({
       <li className={ classes.transactionsListItemControl }>
         <i
           className={ `${classes.transactionsListControlIcon} icon-pencil` }
-          onClick={ () => {} }
+          onClick={ onTransactionEditIconClick }
         >
         </i>
       </li>

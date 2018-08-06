@@ -5,32 +5,43 @@ import { reduxForm, formValueSelector } from 'redux-form';
 import TransactionForm from 'components/transaction-form';
 import { transactionsActionCreators as actionCreators } from 'action-creators';
 
-const FORM_NAME = 'transactionForm';
+const FORM_NAME = 'addTransactionForm';
+const SUBMIT_BUTTON_TEXT = 'Add';
 
-let TransactionFormContainer = reduxForm({
+let AddTransactionForm = reduxForm({
   form: FORM_NAME
 })(TransactionForm);
 
 const selector = formValueSelector(FORM_NAME);
 
 const mapStateToProps = (state) => {
-  const { transactionsMode: { selectedTransaction }, settingsMode: { categories } } = state;
+  const {
+    settingsMode: {
+      categories
+    }
+  } = state;
   const formValues = selector(state, 'category', 'date', 'description', 'amount');
 
   return {
     ...formValues,
-    initialValues: selectedTransaction || {
+    initialValues: {
       category: '',
       date: new Date(),
       description: '',
       amount: ''
     },
-    categorySelectOptions: categories
+    categorySelectOptions: categories,
+    submitButtonText: SUBMIT_BUTTON_TEXT
   };
 };
 
 const mergeProps = (stateProps, { dispatch }, ownProps) => {
-  const { category, date, description, amount } = stateProps;
+  const {
+    category,
+    date,
+    description,
+    amount
+  } = stateProps;
   const { toggleTransactionModal } = ownProps;
 
   return {
@@ -41,7 +52,7 @@ const mergeProps = (stateProps, { dispatch }, ownProps) => {
         actionCreators.addTransaction({
           date,
           description,
-          category: category.label,
+          category,
           amount: parseFloat(amount)
         })
       )
@@ -49,10 +60,10 @@ const mergeProps = (stateProps, { dispatch }, ownProps) => {
   };
 };
 
-TransactionFormContainer = connect(
+AddTransactionForm = connect(
   mapStateToProps,
   null,
   mergeProps
-)(TransactionFormContainer);
+)(AddTransactionForm);
 
-export default TransactionFormContainer;
+export default AddTransactionForm;

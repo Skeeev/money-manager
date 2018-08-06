@@ -19,6 +19,7 @@ const DatePicker = withStyledDatePicker(DayPickerInput);
 const TransactionForm = ({
   classes,
   categorySelectOptions,
+  submitButtonText,
   submitTransactionFormHandler
 }) => (
   <form className={ classes.transactionForm }>
@@ -32,7 +33,16 @@ const TransactionForm = ({
       <Field
         id="category"
         name="category"
-        component={ ({ input: { name, value, onChange, onFocus, onBlur }, id }) => (
+        component={ ({
+          input: {
+            name,
+            value,
+            onChange,
+            onFocus,
+            onBlur
+          },
+          id
+        } ) => (
           <Select
             isClearable
             inputId={ id }
@@ -55,7 +65,14 @@ const TransactionForm = ({
       <Field
         id="date"
         name="date"
-        component={ ({ input: { name, value, onChange }, id }) => (
+        component={ ({
+          input: {
+            name,
+            value,
+            onChange
+          },
+          id
+        } ) => (
           <DatePicker
             inputProps={ {
               id,
@@ -121,7 +138,7 @@ const TransactionForm = ({
       className={ classes.transactionFormSubmitButton }
       onClick={ submitTransactionFormHandler }
     >
-      Add
+      { submitButtonText }
     </Button>
   </form>
 );

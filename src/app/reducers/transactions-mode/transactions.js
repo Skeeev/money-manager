@@ -8,6 +8,8 @@ const transactions = (state = [], action) => {
         ...state,
         transaction(undefined, action)
       ];
+    case actionTypes.EDIT_TRANSACTION:
+      return state.map(t => transaction(t, action));
     case actionTypes.REMOVE_TRANSACTION:
       return state.filter(t => transaction(t, action));
     default:

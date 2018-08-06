@@ -3,13 +3,12 @@ import injectSheet from 'react-jss';
 
 import TransactionsList from '../transactions-list';
 import TransactionConfirm from '../transaction-confirm';
+import TransactionModal from '../transaction-modal';
+import EditTransactionForm from 'containers/edit-transaction-form';
 
 import walletImage from 'assets/images/wallet.svg';
 
 import styles from './styles';
-
-const NO_TRANSACTIONS_NOTIFICATION_TEXT = 'You don\'t have any transactions yet.';
-const TRANSACTION_REMOVE_CONFIRM_MESSAGE = 'Remove this transaction?';
 
 class TransactionsSection extends Component {
   constructor(props) {
@@ -17,6 +16,7 @@ class TransactionsSection extends Component {
 
     this.state = {
       isRemoveConfirmOpen: false,
+      isEditModalOpen: false,
       selectedTransactionId: null
     };
 
@@ -24,8 +24,24 @@ class TransactionsSection extends Component {
   }
 
   bindHandlers() {
+    this.openEditModal = this.openEditModal.bind(this);
+    this.closeEditModal = this.closeEditModal.bind(this);
     this.openRemoveConfirm = this.openRemoveConfirm.bind(this);
     this.closeRemoveConfirm = this.closeRemoveConfirm.bind(this);
+  }
+
+  openEditModal(selectedTransactionId) {
+    this.setState({
+      selectedTransactionId,
+      isEditModalOpen: true
+    });
+  }
+
+  closeEditModal() {
+    this.setState({
+      selectedTransactionId: null,
+      isEditModalOpen: false
+    });
   }
 
   openRemoveConfirm(selectedTransactionId) {
@@ -46,10 +62,13 @@ class TransactionsSection extends Component {
     const {
       classes,
       transactions,
-      onTransactionRemove
+      onTransactionRemove,
+      emptyTransactionListText,
+      removeConfirmText
     } = this.props;
     const {
       isRemoveConfirmOpen,
+      isEditModalOpen,
       selectedTransactionId
     } = this.state;
 
@@ -59,22 +78,40 @@ class TransactionsSection extends Component {
           transactions.length ?
             <TransactionsList
               transactions={ transactions }
+              onTransactionEditIconClick={ this.openEditModal }
               onTransactionRemoveIconClick={ this.openRemoveConfirm }
             /> :
             <div className={ classes.transactionsSectionNotification }>
-              <img className={ classes.transactionsSectionNotificationImage } src={ walletImage } alt="Wallet" />
-              <p className={ classes.transactionsSectionNotificationText }>{ NO_TRANSACTIONS_NOTIFICATION_TEXT }</p>
+              <img
+                className={ classes.transactionsSectionNotificationImage }
+                src={ walletImage } alt="Wallet"
+              />
+              <p
+                className={ classes.transactionsSectionNotificationText }
+              >
+                { emptyTransactionListText }
+              </p>
             </div>
         }
         <TransactionConfirm
           isOpen={ isRemoveConfirmOpen }
-          text={ TRANSACTION_REMOVE_CONFIRM_MESSAGE }
+          text={ removeConfirmText }
           onSubmit={ () => {
             this.closeRemoveConfirm();
             onTransactionRemove(selectedTransactionId);
           } }
           onClose={ this.closeRemoveConfirm }
         />
+        <TransactionModal
+          title="Edit transaction"
+          isOpen={ isEditModalOpen }
+          onClose={ this.closeEditModal }
+        >
+          <EditTransactionForm
+            selectedTransactionId={ selectedTransactionId }
+            closeEditTransactionModal={ this.closeEditModal }
+          />
+        </TransactionModal>
       </div>
     );
   }

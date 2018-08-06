@@ -12,6 +12,20 @@ const transaction = (state = {}, action) => {
         amount,
         id: action.id
       };
+    case actionTypes.EDIT_TRANSACTION:
+      const {
+        id,
+        ...transactionProps
+      } = action;
+
+      if (state.id !== id) {
+        return state;
+      }
+
+      return {
+        ...state,
+        ...transactionProps
+      };
     case actionTypes.REMOVE_TRANSACTION:
       return state.id !== action.id;
     default:

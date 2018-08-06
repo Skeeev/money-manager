@@ -2,8 +2,7 @@ import transactions from './transactions';
 import { transactionActionTypes as actionTypes } from 'constants';
 
 const initialState = {
-  transactions: [],
-  selectedTransaction: null
+  transactions: []
 };
 
 const transactionsMode = (state = initialState, action) => {
@@ -11,13 +10,16 @@ const transactionsMode = (state = initialState, action) => {
     case actionTypes.ADD_TRANSACTION:
       return {
         ...state,
-        isAddingTransaction: false,
+        transactions: transactions(state.transactions, action)
+      };
+    case actionTypes.EDIT_TRANSACTION:
+      return {
+        ...state,
         transactions: transactions(state.transactions, action)
       };
     case actionTypes.REMOVE_TRANSACTION:
       return {
         ...state,
-        isRemovingTransaction: false,
         transactions: transactions(state.transactions, action)
       };
     default:

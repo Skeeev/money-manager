@@ -8,6 +8,7 @@ import styles from './styles';
 const TransactionsList = ({
   classes,
   transactions,
+  onTransactionEditIconClick,
   onTransactionRemoveIconClick
 }) => (
   <ul className={ classes.transactionsSectionList }>
@@ -16,6 +17,7 @@ const TransactionsList = ({
         <Transaction
           key={ transaction.id }
           data={ transaction }
+          onTransactionEditIconClick={ () => onTransactionEditIconClick(transaction.id) }
           onTransactionRemoveIconClick={ () => onTransactionRemoveIconClick(transaction.id) }
         />
       ))

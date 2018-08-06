@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 
-import TransactionForm from 'containers/transaction-form';
+import AddTransactionForm from 'containers/add-transaction-form';
 import TransactionModal from '../transaction-modal';
 import Button from '../button';
 
@@ -12,15 +12,19 @@ class AddTransaction extends Component {
     super(props);
 
     this.state = {
-      isModalOpen: false
+      isAddModalOpen: false
     };
 
+    this.bindHandlers();
+  }
+
+  bindHandlers() {
     this.toggleTransactionModal = this.toggleTransactionModal.bind(this);
   }
 
   toggleTransactionModal() {
     this.setState(prevState => ({
-      isModalOpen: !prevState.isModalOpen
+      isAddModalOpen: !prevState.isAddModalOpen
     }));
   }
 
@@ -28,7 +32,7 @@ class AddTransaction extends Component {
     const {
       classes
     } = this.props;
-    const { isModalOpen } = this.state;
+    const { isAddModalOpen } = this.state;
 
     return (
       <div>
@@ -42,11 +46,10 @@ class AddTransaction extends Component {
         </Button>
         <TransactionModal
           title="Add new transaction"
-          submitButtonText="Add"
-          isOpen={ isModalOpen }
+          isOpen={ isAddModalOpen }
           onClose={ this.toggleTransactionModal }
         >
-          <TransactionForm
+          <AddTransactionForm
             toggleTransactionModal={ this.toggleTransactionModal }
           />
         </TransactionModal>
