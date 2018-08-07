@@ -7,8 +7,9 @@ import TransactionsSection from 'components/transactions-section';
 const NO_TRANSACTIONS_NOTIFICATION_TEXT = 'You don\'t have any transactions yet.';
 const TRANSACTION_REMOVE_CONFIRM_MESSAGE = 'Remove this transaction?';
 
-const mapStateToProps = ({ transactionsMode: { transactions } }) => ({
-  transactions,
+const mapStateToProps = ({ transactions: { transactionsList }, settings: { activeCurrency } }) => ({
+  transactionsList,
+  transactionsCurrency: activeCurrency.value,
   emptyTransactionListText: NO_TRANSACTIONS_NOTIFICATION_TEXT,
   removeConfirmText: TRANSACTION_REMOVE_CONFIRM_MESSAGE
 });

@@ -16,10 +16,10 @@ const selector = formValueSelector(FORM_NAME);
 
 const mapStateToProps = (state, ownProps) => {
   const {
-    transactionsMode: {
-      transactions
+    transactions: {
+      transactionsList
     },
-    settingsMode: {
+    settings: {
       categories
     }
   } = state;
@@ -30,7 +30,7 @@ const mapStateToProps = (state, ownProps) => {
     description,
     amount
   } = {
-    ...transactions.find(transaction => transaction.id === selectedTransactionId)
+    ...transactionsList.find(transaction => transaction.id === selectedTransactionId)
   };
   const formValues = selector(state, 'category', 'date', 'description', 'amount');
 

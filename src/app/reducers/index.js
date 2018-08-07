@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import transactionsMode from './transactions-mode';
-import settingsMode from './settings-mode';
+import transactions from './transactions';
+import settings from './settings';
 import { reducer as reduxFormReducer } from 'redux-form';
 
 export default combineReducers({
-  transactionsMode,
-  settingsMode,
+  transactions,
+  settings,
   form: reduxFormReducer
 });

@@ -16,7 +16,7 @@ export default {
       left: "0",
       width: "100%",
       height: "1px",
-      background: "linear-gradient(to right, #ffffff 0%,#dbdbdb 40%,#dbdbdb 45%,#dbdbdb 55%,#dbdbdb 60%,#ffffff 99%)"
+      background: "linear-gradient(to right, #ffffff 0%,#eaeaea 10%,#eaeaea 10%,#eaeaea 45%,#eaeaea 55%,#eaeaea 90%,#ffffff 100%)"
     }
   },
   transactionsSectionItemCategory: {

@@ -16,7 +16,7 @@ const selector = formValueSelector(FORM_NAME);
 
 const mapStateToProps = (state) => {
   const {
-    settingsMode: {
+    settings: {
       categories
     }
   } = state;

@@ -1,7 +1,7 @@
 import transaction from './transaction';
 import { transactionActionTypes as actionTypes } from 'constants';
 
-const transactions = (state = [], action) => {
+const transactionsList = (state = [], action) => {
   switch (action.type) {
     case actionTypes.ADD_TRANSACTION:
       return [
@@ -17,4 +17,4 @@ const transactions = (state = [], action) => {
   }
 };
 
-export default transactions;
+export default transactionsList;

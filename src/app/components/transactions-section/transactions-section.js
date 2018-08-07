@@ -61,7 +61,8 @@ class TransactionsSection extends Component {
   render() {
     const {
       classes,
-      transactions,
+      transactionsList,
+      transactionsCurrency,
       onTransactionRemove,
       emptyTransactionListText,
       removeConfirmText
@@ -75,9 +76,10 @@ class TransactionsSection extends Component {
     return (
       <div className={ classes.transactionsSection }>
         {
-          transactions.length ?
+          transactionsList.length ?
             <TransactionsList
-              transactions={ transactions }
+              transactionsList={ transactionsList }
+              transactionsCurrency={ transactionsCurrency }
               onTransactionEditIconClick={ this.openEditModal }
               onTransactionRemoveIconClick={ this.openRemoveConfirm }
             /> :

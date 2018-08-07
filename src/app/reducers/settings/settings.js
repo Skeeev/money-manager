@@ -37,14 +37,23 @@ const initialState = {
       value: 'sport & hobbies'
     }
   ],
-  currency: 'USD'
+  currencies: [
+    {
+      label: 'USD',
+      value: '$'
+    }
+  ],
+  activeCurrency: {
+    label: 'USD',
+    value: '$'
+  }
 };
 
-const settingsMode = (state = initialState, action) => {
+const settings = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export default settingsMode;
+export default settings;

@@ -6,6 +6,7 @@ import styles from './styles';
 const Transaction = ({
   classes,
   data,
+  transactionsCurrency,
   onTransactionEditIconClick,
   onTransactionRemoveIconClick
 }) => (
@@ -20,7 +21,7 @@ const Transaction = ({
       { data.description }
     </div>
     <div className={ classes.transactionsSectionItemAmount }>
-      { `$ ${data.amount}` }
+      { `${transactionsCurrency} ${data.amount}` }
     </div>
     <ul className={ classes.transactionsListItemControls }>
       <li className={ classes.transactionsListItemControl }>
