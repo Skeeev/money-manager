@@ -35,9 +35,9 @@ class AddTransaction extends Component {
     const { isAddModalOpen } = this.state;
 
     return (
-      <div>
+      <div className={ classes.addTransaction }>
         <Button
-          className={ classes.addNewTransactionButton }
+          className={ classes.addTransactionButton }
           type="button"
           onClick={ this.toggleTransactionModal }
         >

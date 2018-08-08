@@ -31,10 +31,10 @@ const TransactionModal = ({
     } }
   >
     <div className={ classes.modalContent }>
-      <div className={ classes.modalBody }>
+      <section className={ classes.modalBody }>
         <h2 className={ classes.modalTitle }>{ title }</h2>
         { children }
-      </div>
+      </section>
       <div className={ classes.modalControls }>
         <i
           className={ `${classes.modalCloseButton} icon-close` }

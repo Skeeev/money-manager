@@ -1,5 +1,6 @@
 export default {
-  addNewTransactionButton: {
+  addTransaction: {},
+  addTransactionButton: {
     display: "flex",
     padding: "10px 20px",
     alignItems: "center",

@@ -5,7 +5,6 @@ import { formatDate, parseDate } from 'react-day-picker/moment';
 import Select from 'react-select';
 import injectSheet from 'react-jss';
 
-import 'moment/locale/it';
 import 'react-day-picker/lib/style.css';
 
 import Button from '../button';

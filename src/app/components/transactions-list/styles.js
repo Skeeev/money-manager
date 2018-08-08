@@ -1,11 +1,12 @@
 export default {
   transactionsSectionListContainer: {
-    height: "724px"
+    height: "620px",
+    marginTop: "30px"
   },
   transactionsSectionList: {
+    boxSizing: "border-box",
     padding: "20px",
     borderRadius: "4px",
-    boxSizing: "border-box",
     background: "#fff"
   }
 };

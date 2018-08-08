@@ -14,7 +14,7 @@ let AddTransactionForm = reduxForm({
 
 const selector = formValueSelector(FORM_NAME);
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const {
     settings: {
       categories

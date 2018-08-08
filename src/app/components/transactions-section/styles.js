@@ -1,8 +1,9 @@
 export default {
   transactionsSection: {
-    marginTop: "40px"
+    marginTop: "30px"
   },
   transactionsSectionNotification: {
+    paddingTop: "100px",
     textAlign: "center"
   },
   transactionsSectionNotificationImage: {

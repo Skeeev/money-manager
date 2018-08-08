@@ -11,8 +11,6 @@ const Transactions = ({
 }) => (
   <div className={ classes.wrapper }>
     <AddTransaction />
-    {/*<FilterTransactions />*/}
-    {/*<TransactionsInfo />*/}
     <TransactionsSection />
   </div>
 );

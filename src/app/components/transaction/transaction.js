@@ -1,27 +1,33 @@
 import React from 'react';
 import injectSheet from 'react-jss';
+import moment from 'moment';
 
 import styles from './styles';
 
 const Transaction = ({
   classes,
-  data,
+  data: {
+    category,
+    date,
+    description,
+    amount
+  },
   transactionsCurrency,
   onTransactionEditIconClick,
   onTransactionRemoveIconClick
 }) => (
   <li className={ classes.transactionsSectionListItem }>
     <div className={ classes.transactionsSectionItemCategory }>
-      { data.category.label }
+      { category.label }
     </div>
     <time className={ classes.transactionsSectionItemDate }>
-      { `${data.date.getDate()} ${data.date.getMonth() + 1}, ${data.date.getFullYear()}`}
+      { moment(date).format('ll') }
     </time>
     <div className={ classes.transactionsSectionItemDescription }>
-      { data.description }
+      { description }
     </div>
     <div className={ classes.transactionsSectionItemAmount }>
-      { `${transactionsCurrency} ${data.amount}` }
+      { `${transactionsCurrency} ${amount}` }
     </div>
     <ul className={ classes.transactionsListItemControls }>
       <li className={ classes.transactionsListItemControl }>

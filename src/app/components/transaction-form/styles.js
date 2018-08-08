@@ -37,10 +37,10 @@ export default {
   },
   transactionFormField: {
     width: "350px",
+    boxSizing: "border-box",
     border: "1px solid #ccc",
     padding: "14px 8px",
     borderRadius: "4px",
-    boxSizing: "border-box",
     "&:focus": {
       outlineColor: "#e67d86"
     }

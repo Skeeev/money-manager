@@ -4,6 +4,7 @@ import injectSheet from 'react-jss';
 import TransactionsList from '../transactions-list';
 import TransactionConfirm from '../transaction-confirm';
 import TransactionModal from '../transaction-modal';
+import TransactionsInfo from 'containers/transactions-info';
 import EditTransactionForm from 'containers/edit-transaction-form';
 
 import walletImage from 'assets/images/wallet.svg';
@@ -77,12 +78,15 @@ class TransactionsSection extends Component {
       <div className={ classes.transactionsSection }>
         {
           transactionsList.length ?
-            <TransactionsList
-              transactionsList={ transactionsList }
-              transactionsCurrency={ transactionsCurrency }
-              onTransactionEditIconClick={ this.openEditModal }
-              onTransactionRemoveIconClick={ this.openRemoveConfirm }
-            /> :
+            <div>
+              <TransactionsInfo />
+              <TransactionsList
+                transactionsList={ transactionsList }
+                transactionsCurrency={ transactionsCurrency }
+                onTransactionEditIconClick={ this.openEditModal }
+                onTransactionRemoveIconClick={ this.openRemoveConfirm }
+              />
+            </div> :
             <div className={ classes.transactionsSectionNotification }>
               <img
                 className={ classes.transactionsSectionNotificationImage }

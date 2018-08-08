@@ -1,12 +1,12 @@
 export default {
   button: {
+    boxSizing: "border-box",
     border: {
       width: "1px",
       style: "solid",
       color: "#ccc",
       radius: "4px"
     },
-    boxSizing: "border-box",
     color: "#000",
     font: {
       weight: "700",
