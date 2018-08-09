@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom'
 import injectSheet from 'react-jss';
 
 import logo from 'assets/images/logo.svg';
@@ -8,20 +9,31 @@ const Header = ({
   classes
 }) => (
   <header className={ classes.header }>
-    <a className={ classes.headerLogoLink } href="/">
+    <Link
+      to="/transactions"
+      className={ classes.headerLogoLink }
+    >
       <img className={ classes.headerLogo } src={ logo } alt="Logo"/>
-    </a>
+    </Link>
     <nav className={ classes.headerNav }>
       <ul className={ classes.headerNavList }>
         <li className={ classes.headerNavListItem }>
-          <a className={ `${classes.headerNavLink} ${classes.headerNavLinkActive}` } href="">
+          <NavLink
+            to="/transactions"
+            className={ classes.headerNavLink }
+            activeClassName={ classes.headerNavLinkActive }
+          >
             Transactions
-          </a>
+          </NavLink>
         </li>
         <li className={ classes.headerNavListItem }>
-          <a className={ classes.headerNavLink } href="">
+          <NavLink
+            to="/settings"
+            className={ classes.headerNavLink }
+            activeClassName={ classes.headerNavLinkActive }
+          >
             Settings
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>

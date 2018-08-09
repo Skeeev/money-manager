@@ -40,6 +40,14 @@ export default {
       color: "#e67d86"
     }
   },
+  '@keyframes fadeIn': {
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: 1
+    }
+  },
   headerNavLinkActive: {
     color: "#e67d86",
     "&:after": {
@@ -49,7 +57,8 @@ export default {
       height: "3px",
       bottom: "0",
       left: "0",
-      backgroundColor: "#e67d86"
+      backgroundColor: "#e67d86",
+      animation: 'fadeIn .8s'
     }
   }
 };

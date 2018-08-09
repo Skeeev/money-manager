@@ -86,6 +86,7 @@ const config = {
   },
   devServer: {
     contentBase: paths.dist,
+    historyApiFallback: true,
     compress: true,
     watchContentBase: true,
     port: 3000

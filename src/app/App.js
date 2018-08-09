@@ -1,15 +1,15 @@
 import React from 'react';
+import { ConnectedRouter } from "connected-react-router";
 
-import Header from 'components/header';
 import MoneyManager from 'components/money-manager';
 
 import './App.css';
+import history from './history';
 
 const App = () => (
-  <div>
-    <Header />
+  <ConnectedRouter history={ history }>
     <MoneyManager />
-  </div>
+  </ConnectedRouter>
 );
 
 export default App;
