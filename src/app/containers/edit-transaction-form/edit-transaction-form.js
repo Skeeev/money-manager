@@ -71,7 +71,7 @@ const mergeProps = (stateProps, { dispatch }, ownProps) => {
           category,
           amount: parseFloat(amount)
         })
-      )
+      );
     }
   };
 };

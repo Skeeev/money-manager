@@ -5,6 +5,12 @@ const currencyChange = ({ currency }) => ({
   selectedCurrency: currency
 });
 
+const addCategory = ({ category }) => ({
+  type: actionTypes.ADD_CATEGORY,
+  category
+});
+
 export {
-  currencyChange
+  currencyChange,
+  addCategory
 };

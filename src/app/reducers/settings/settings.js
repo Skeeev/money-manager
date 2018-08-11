@@ -1,4 +1,5 @@
 import { settingsActionTypes as actionTypes } from 'constants';
+import categories from './categories';
 
 const initialState = {
   categories: [
@@ -67,6 +68,14 @@ const settings = (state = initialState, action) => {
         activeCurrency: {
           ...action.selectedCurrency
         }
+      };
+    case actionTypes.ADD_CATEGORY:
+      return {
+        ...state,
+        categories: categories(
+          state.categories,
+          action
+        )
       };
     default:
       return state;

@@ -39,11 +39,12 @@ export default {
     width: "350px",
     boxSizing: "border-box",
     border: "1px solid #ccc",
-    padding: "14px 8px",
+    padding: "12px 8px",
     borderRadius: "4px",
     "&:focus": {
       outlineColor: "#e67d86"
-    }
+    },
+    lineHeight: "1"
   },
   transactionFormFieldDatePicker: {
     maxWidth: "280px"
