@@ -1,4 +1,4 @@
-import { transactionActionTypes as actionTypes } from 'constants';
+import { transactionsActionTypes as actionTypes } from 'constants';
 import { generateTransactionId } from 'utils';
 
 const addTransaction = actionProps => ({

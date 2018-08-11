@@ -12,7 +12,7 @@ const mapStateToProps = ({ transactions: { transactionsList }, settings: { activ
 
     return totalAmount;
   }, 0).toFixed(2),
-  transactionsCurrency: activeCurrency.label
+  transactionsCurrency: activeCurrency.label.split('-')[0]
 });
 
 export default connect(

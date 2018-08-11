@@ -1,5 +1,9 @@
-import { transactionActionTypes } from './action-types';
+import {
+  transactionsActionTypes,
+  settingsActionTypes
+} from './action-types';
 
 export {
-  transactionActionTypes
+  transactionsActionTypes,
+  settingsActionTypes
 };

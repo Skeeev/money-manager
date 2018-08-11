@@ -1,3 +1,5 @@
+import { settingsActionTypes as actionTypes } from 'constants';
+
 const initialState = {
   categories: [
     {
@@ -39,18 +41,33 @@ const initialState = {
   ],
   currencies: [
     {
-      label: 'USD',
+      label: 'USD - United States dollar',
       value: '$'
+    },
+    {
+      label: 'EUR - European Monetary Unit',
+      value: '€'
+    },
+    {
+      label: 'GBP - Great Britain Pound',
+      value: '£'
     }
   ],
   activeCurrency: {
-    label: 'USD',
+    label: 'USD - United States dollar',
     value: '$'
   }
 };
 
 const settings = (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.CURRENCY_CHANGE:
+      return {
+        ...state,
+        activeCurrency: {
+          ...action.selectedCurrency
+        }
+      };
     default:
       return state;
   }

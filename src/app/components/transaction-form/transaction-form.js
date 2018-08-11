@@ -11,7 +11,7 @@ import Button from '../button';
 import { withStyledDatePicker } from '../hoc';
 
 import styles from './styles';
-import transactionSelectStyles from './transactionSelectStyles';
+import transactionsCategorySelectStyles from './transactions-category-select-styles';
 
 const DatePicker = withStyledDatePicker(DayPickerInput);
 
@@ -45,7 +45,7 @@ const TransactionForm = ({
           <Select
             isClearable
             inputId={ id }
-            styles={ transactionSelectStyles }
+            styles={ transactionsCategorySelectStyles }
             name={ name }
             value={ value }
             onChange={ onChange }

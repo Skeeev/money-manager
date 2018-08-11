@@ -1,9 +1,16 @@
 import React from 'react';
+import injectSheet from 'react-jss';
 
-const Settings = () => (
-  <div className="settings-test">
-    Settings...
+import SettingsForm from 'containers/settings-form';
+
+import styles from './styles';
+
+const Settings = ({
+  classes
+}) => (
+  <div className={ classes.wrapper }>
+    <SettingsForm />
   </div>
 );
 
-export default Settings;
+export default injectSheet(styles)(Settings);
