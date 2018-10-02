@@ -20,44 +20,35 @@ class TransactionsSection extends Component {
       isEditModalOpen: false,
       selectedTransactionId: null
     };
-
-    this.bindHandlers();
   }
 
-  bindHandlers() {
-    this.openEditModal = this.openEditModal.bind(this);
-    this.closeEditModal = this.closeEditModal.bind(this);
-    this.openRemoveConfirm = this.openRemoveConfirm.bind(this);
-    this.closeRemoveConfirm = this.closeRemoveConfirm.bind(this);
-  }
-
-  openEditModal(selectedTransactionId) {
+  openEditModal = selectedTransactionId => {
     this.setState({
       selectedTransactionId,
       isEditModalOpen: true
     });
-  }
+  };
 
-  closeEditModal() {
+  closeEditModal = () => {
     this.setState({
       selectedTransactionId: null,
       isEditModalOpen: false
     });
-  }
+  };
 
-  openRemoveConfirm(selectedTransactionId) {
+  openRemoveConfirm = selectedTransactionId => {
     this.setState({
       selectedTransactionId,
       isRemoveConfirmOpen: true
     });
-  }
+  };
 
-  closeRemoveConfirm() {
+  closeRemoveConfirm = () => {
     this.setState({
       selectedTransactionId: null,
       isRemoveConfirmOpen: false
     });
-  }
+  };
 
   render() {
     const {

@@ -14,24 +14,16 @@ class AddTransaction extends Component {
     this.state = {
       isAddModalOpen: false
     };
-
-    this.bindHandlers();
   }
 
-  bindHandlers() {
-    this.toggleTransactionModal = this.toggleTransactionModal.bind(this);
-  }
-
-  toggleTransactionModal() {
+  toggleTransactionModal = () => {
     this.setState(prevState => ({
       isAddModalOpen: !prevState.isAddModalOpen
     }));
-  }
+  };
 
   render() {
-    const {
-      classes
-    } = this.props;
+    const { classes } = this.props;
     const { isAddModalOpen } = this.state;
 
     return (
